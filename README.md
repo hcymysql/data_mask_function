@@ -1,4 +1,5 @@
 # MySQL data_mask_function 脱敏函数使用
+https://github.com/hcymysql/data_mask_function
 
 ## 1. 身份证号、手机号、银行卡号 采用 Percona data_masking.so 插件脱敏
 https://docs.percona.com/percona-server/8.0/data-masking-plugin-functions.html
