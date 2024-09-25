@@ -63,11 +63,11 @@ mysql> source /tmp/mask_chinese_name.sql;
 #### 1. 邮箱
 ```
 mysql> SELECT mask_email('abc@sohu.com') AS email;
-+---------------+
-| email         |
-+---------------+
-| xxxx@sohu.com |
-+---------------+
++--------------+
+| email        |
++--------------+
+| ***@sohu.com |
++--------------+
 1 row in set (0.00 sec)
 ```
 
