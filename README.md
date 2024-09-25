@@ -1,6 +1,6 @@
 # MySQL 脱敏函数使用
 
-## 1. 身份证号、手机号、银行卡号 采用 Percona data_masking.so 插件脱敏
+## 1. 身份证号、手机号、银行卡号 采用 Percona data_masking.so 插件实现数据脱敏
 https://docs.percona.com/percona-server/8.0/data-masking-plugin-functions.html
 
 ### 安装脱敏插件
@@ -50,7 +50,7 @@ mysql> SELECT mask_inner('13912345678', 3, 2, '*') AS mobile;
 #### 注：保留手机号的前3位和后2位，中间部分用'*'替代
 
 ------------------------------------
-## 2. 邮箱、姓名、地址 采用 自主编写的脱敏函数
+## 2. 邮箱、姓名、地址 采用自主编写的函数实现数据脱敏
 ### 安装脱敏函数
 ```
 mysql> use yourDB;
