@@ -1,0 +1,8 @@
+-- 人民币脱敏函数
+DELIMITER //
+CREATE FUNCTION mask_amount(amount DECIMAL(10,2)) 
+RETURNS VARCHAR(4) DETERMINISTIC
+BEGIN
+    RETURN '****'; -- 无论输入的金额是多少，函数总是返回4个星
+END //
+DELIMITER ;
