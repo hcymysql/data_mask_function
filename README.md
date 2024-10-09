@@ -50,10 +50,11 @@ mysql> SELECT mask_inner('13912345678', 3, 2, '*') AS mobile;
 #### 注：保留手机号的前3位和后2位，中间部分用'*'替代
 
 ------------------------------------
-## 2. 邮箱、姓名、地址 采用自主编写的函数实现数据脱敏
+## 2. 邮箱、姓名、金额、地址 采用自主编写的函数实现数据脱敏
 ### 安装脱敏函数
 ```
 mysql> use yourDB;
+mysql> source /tmp/mask_amount.sql;
 mysql> source /tmp/mask_email.sql;
 mysql> source /tmp/mask_address.sql;
 mysql> source /tmp/mask_chinese_name.sql;
@@ -90,7 +91,26 @@ mysql> SELECT mask_chinese_name('张某三') AS name;
 1 row in set (0.00 sec)
 ```
 
-#### 3. 家庭住址
+#### 3. 人民币
+```
+mysql> SELECT mask_amount('343.34') AS money;
++-------+
+| money |
++-------+
+| ****  |
++-------+
+1 row in set (0.00 sec)
+
+mysql> SELECT mask_amount('99999.34') AS money;
++-------+
+| money |
++-------+
+| ****  |
++-------+
+1 row in set (0.00 sec)
+```
+
+#### 4. 家庭住址
 ```
 mysql> SELECT mask_address('北京市朝阳区霄云路8号') AS address;
 +-------------------------+
